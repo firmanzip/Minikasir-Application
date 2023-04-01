@@ -30,7 +30,7 @@
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
-            android:layout_height="188dp"
+            android:layout_height="230dp"
             android:layout_margin="18dp"
             app:srcCompat="@drawable/cashier2_118071" />
 
@@ -108,7 +108,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:hintTextColor="#666666">
+            app:hintTextColor="#666666" >
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_uang_bayar"
