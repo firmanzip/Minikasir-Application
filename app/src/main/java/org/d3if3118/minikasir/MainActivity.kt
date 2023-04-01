@@ -2,6 +2,7 @@ package org.d3if3118.minikasir
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatDelegate
 import org.d3if3118.minikasir.databinding.ActivityMainBinding
 
 
@@ -15,6 +16,21 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
+            binding.switchDarkMode.isChecked = true
+        }
+
+        binding.switchDarkMode.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            } else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+            recreate()
+        }
+        binding.btnReset.setOnClickListener {
+            resetInput()
+        }
         // Add click listener to the "Proses" button
         binding.btnProses.setOnClickListener {
             // Get input values from the EditText views
@@ -33,8 +49,8 @@ class MainActivity : AppCompatActivity() {
             val bonus = if (uangBayar >= 50000) "Bonus 1 barang" else "Tidak ada Bonus"
 
             // Set the text for the result TextView
-            val resultText = "Total belanja: Rp$totalBelanja\n" +
-                    "Uang kembali: Rp$uangKembali\n" +
+            val resultText = "Total belanja: Rp $totalBelanja\n" +
+                    "Uang kembali: Rp $uangKembali\n" +
                     "Bonus: $bonus"
 
             binding.tvTotalBelanja.text = resultText
@@ -43,5 +59,15 @@ class MainActivity : AppCompatActivity() {
             val keterangan = if (uangKembali >= 0) "Terima kasih telah berbelanja." else "Uang bayar tidak mencukupi."
             binding.tvKeterangan.text = keterangan
         }
+    }
+
+    private fun resetInput() {
+        binding.etNamaPelanggan.setText("")
+        binding.tvTotalBelanja.setText("")
+        binding.etJumlahBeli.setText("")
+        binding.etNamaBarang.setText("")
+        binding.tvKeterangan.setText("")
+        binding.etHarga.setText("")
+        binding.etUangBayar.setText("")
     }
 }
