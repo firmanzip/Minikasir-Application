@@ -1,7 +1,9 @@
 package org.d3if3118.minikasir
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AppCompatDelegate
 import org.d3if3118.minikasir.databinding.ActivityMainBinding
 
@@ -39,6 +41,11 @@ class MainActivity : AppCompatActivity() {
             val jumlahBeli = binding.etJumlahBeli.text.toString().toInt()
             val harga = binding.etHarga.text.toString().toInt()
             val uangBayar = binding.etUangBayar.text.toString().toInt()
+            // inisialisasi objek InputMethodManager
+
+            val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(binding.root.windowToken, 0)
+
             // Calculate total belanja
             val totalBelanja = jumlahBeli * harga
 
