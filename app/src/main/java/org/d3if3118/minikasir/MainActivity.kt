@@ -3,7 +3,9 @@ package org.d3if3118.minikasir
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.inputmethod.InputMethodManager
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import org.d3if3118.minikasir.databinding.ActivityMainBinding
 
@@ -37,6 +39,11 @@ class MainActivity : AppCompatActivity() {
         binding.btnProses.setOnClickListener {
             // Get input values from the EditText views
             val namaPelanggan = binding.etNamaPelanggan.text.toString()
+            if (TextUtils.isEmpty(namaPelanggan)) {
+                Toast.makeText(this, R.string.nama_invalid, Toast.LENGTH_LONG).show()
+                return@setOnClickListener
+            }
+
             val namaBarang = binding.etNamaBarang.text.toString()
             val jumlahBeli = binding.etJumlahBeli.text.toString().toInt()
             val harga = binding.etHarga.text.toString().toInt()

@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Mini Kasir</string>
+    <string name="nama_invalid">Nama tidak boleh kosong</string>
 </resources>
