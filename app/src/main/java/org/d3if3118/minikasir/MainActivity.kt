@@ -23,7 +23,25 @@ class MainActivity : AppCompatActivity() {
             val jumlahBeli = binding.etJumlahBeli.text.toString().toInt()
             val harga = binding.etHarga.text.toString().toInt()
             val uangBayar = binding.etUangBayar.text.toString().toInt()
+            // Calculate total belanja
+            val totalBelanja = jumlahBeli * harga
 
+            // Calculate uang kembali
+            val uangKembali = uangBayar - totalBelanja
+
+            // Calculate bonus
+            val bonus = if (uangBayar >= 50000) "Bonus 1 barang" else "Tidak ada Bonus"
+
+            // Set the text for the result TextView
+            val resultText = "Total belanja: Rp$totalBelanja\n" +
+                    "Uang kembali: Rp$uangKembali\n" +
+                    "Bonus: $bonus"
+
+            binding.tvTotalBelanja.text = resultText
+
+            // Set the text keterangan TextView
+            val keterangan = if (uangKembali >= 0) "Terima kasih telah berbelanja." else "Uang bayar tidak mencukupi."
+            binding.tvKeterangan.text = keterangan
         }
     }
 }
