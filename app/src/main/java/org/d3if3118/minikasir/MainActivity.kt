@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.inputmethod.InputMethodManager
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import org.d3if3118.minikasir.databinding.ActivityMainBinding
@@ -19,6 +20,9 @@ class MainActivity : AppCompatActivity() {
         // Initialize the binding object
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        val imageView: ImageView = binding.imageView
+        imageView.setImageResource(R.drawable.cashier2_118071)
 
         if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
             binding.switchDarkMode.isChecked = true
