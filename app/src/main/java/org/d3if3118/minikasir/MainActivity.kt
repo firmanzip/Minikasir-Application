@@ -64,17 +64,17 @@ class MainActivity : AppCompatActivity() {
             val uangKembali = uangBayar - totalBelanja
 
             // Calculate bonus
-            val bonus = if (uangBayar >= 50000) "Bonus 1 barang" else "Tidak ada Bonus"
+            val bonus = if (harga >= 50000) "Bonus 1 barang" else "Minimal Belanja RP 50.000 untuk mendapatkan bonus"
 
             // Set the text for the result TextView
-            val resultText = "Total belanja: Rp $totalBelanja\n" +
-                    "Uang kembali: Rp $uangKembali\n" +
-                    "Bonus: $bonus"
+            val resultText = if (uangBayar>= harga )"Total belanja  : Rp. $totalBelanja\n \n" +
+                    "Uang kembali   : Rp. $uangKembali\n \n" +
+                    "Bonus  : $bonus" else "Mohon Maaf \n"
 
             binding.tvTotalBelanja.text = resultText
 
             // Set the text keterangan TextView
-            val keterangan = if (uangKembali >= 0) "Terima kasih telah berbelanja." else "Uang bayar tidak mencukupi."
+            val keterangan = if (uangKembali >= 0) "Terima kasih telah berbelanja." else "Uang anda tidak mencukupi."
             binding.tvKeterangan.text = keterangan
         }
     }
