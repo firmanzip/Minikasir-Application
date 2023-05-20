@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.HitungFragment">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <Switch
+            android:id="@+id/switch_dark_mode"
+            android:layout_width="98dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:checked="false"
+            android:padding="14dp"
+            android:textSize="14sp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="230dp"
+            android:layout_margin="18dp"
+            app:srcCompat="@drawable/cashier2_118071" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nama_pelanggan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintTextColor="#666666">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nama_pelanggan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Pelanggan"
+                android:textColor="#333333"
+                android:textColorHint="#666666" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nama_barang"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="#666666">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nama_barang"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Nama Barang"
+                android:textColor="#333333"
+                android:textColorHint="#666666" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_jumlah_beli"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="#666666">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_jumlah_beli"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Jumlah Beli"
+                android:inputType="number"
+                android:textColor="#333333"
+                android:textColorHint="#666666" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_harga"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="#666666">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_harga"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Harga"
+                android:inputType="number"
+                android:textColor="#333333"
+                android:textColorHint="#666666" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_uang_bayar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:hintTextColor="#666666" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_uang_bayar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Uang Bayar"
+                android:inputType="number"
+                android:textColor="#333333"
+                android:textColorHint="#666666" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btn_proses"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorPrimary"
+            android:text="Cetak"
+            android:textColor="#FFFFFF" />
+        <Button
+            android:id="@+id/btn_reset"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginTop="32dp"
+            android:background="@color/colorPrimary"
+            android:text="Reset"
+            android:textColor="#FFFFFF" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="32dp"
+            android:background="#DDDDDD" />
+
+        <TextView
+            android:id="@+id/tv_total_belanja"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_keterangan"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text=""
+            android:textColor="#333333"
+            android:textSize="16sp" />
+
+
+    </LinearLayout>
+<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+</ScrollView>
