@@ -1,40 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <ScrollView
-
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.HitungFragment">
-    <LinearLayout
+    tools:context=".ui.hitung.HitungFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:padding="16dp">
 
         <Switch
             android:id="@+id/switch_dark_mode"
             android:layout_width="98dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="end"
+            android:layout_marginTop="4dp"
             android:checked="false"
             android:padding="14dp"
-            android:textSize="14sp" />
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="wrap_content"
-            android:layout_height="230dp"
-            android:layout_margin="18dp"
-            app:srcCompat="@drawable/cashier2_118071" />
+            android:layout_width="234dp"
+            android:layout_height="314dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/cashier2_118071"
+            app:layout_constraintBottom_toTopOf="@+id/til_nama_pelanggan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/switch_dark_mode" />
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_nama_pelanggan"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            app:hintTextColor="#666666">
+            app:hintTextColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_nama_pelanggan"
@@ -48,10 +56,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_nama_barang"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:hintTextColor="#666666">
+            app:hintTextColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_nama_pelanggan">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_nama_barang"
@@ -65,10 +76,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_jumlah_beli"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:hintTextColor="#666666">
+            app:hintTextColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_nama_barang">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_jumlah_beli"
@@ -83,10 +97,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_harga"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:hintTextColor="#666666">
+            app:hintTextColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_jumlah_beli">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_harga"
@@ -101,10 +118,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/til_uang_bayar"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            app:hintTextColor="#666666" >
+            app:hintTextColor="#666666"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_harga">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/et_uang_bayar"
@@ -118,25 +138,39 @@
 
         <Button
             android:id="@+id/btn_proses"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="32dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:layout_marginEnd="8dp"
             android:background="@color/colorPrimary"
             android:text="Cetak"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toStartOf="@+id/btn_reset"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/til_uang_bayar" />
+
         <Button
             android:id="@+id/btn_reset"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginTop="32dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="52dp"
             android:background="@color/colorPrimary"
             android:text="Reset"
-            android:textColor="#FFFFFF" />
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btn_proses"
+            app:layout_constraintTop_toBottomOf="@+id/til_uang_bayar" />
+
+
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:layout_marginTop="32dp"
-            android:background="#DDDDDD" />
+            android:background="#DDDDDD"
+            app:layout_constraintTop_toBottomOf="@+id/btnShare" />
 
         <TextView
             android:id="@+id/tv_total_belanja"
@@ -144,8 +178,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:text=""
-            android:textColor="#333333"
-            android:textSize="16sp" />
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="24sp"
+            app:layout_constraintTop_toBottomOf="@+id/btnShare" />
 
         <TextView
             android:id="@+id/tv_keterangan"
@@ -154,10 +189,21 @@
             android:layout_marginTop="8dp"
             android:text=""
             android:textColor="#333333"
-            android:textSize="16sp" />
+            android:textSize="18sp"
+            app:layout_constraintTop_toBottomOf="@+id/tv_total_belanja" />
+        <Button
+            android:id="@+id/btnShare"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:visibility="gone"
+            android:text="Bagikan"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_reset" />
 
 
-    </LinearLayout>
-<!--    </androidx.constraintlayout.widget.ConstraintLayout>-->
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

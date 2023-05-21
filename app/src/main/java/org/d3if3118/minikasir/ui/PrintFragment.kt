@@ -4,18 +4,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.navArgs
 import org.d3if3118.minikasir.databinding.FragmentPrintBinding
 import org.d3if3118.minikasir.model.BonusType
 
 class PrintFragment : Fragment() {
-    private var _binding: FragmentPrintBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentPrintBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentPrintBinding.inflate(inflater, container, false)
+        binding = FragmentPrintBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -32,10 +32,10 @@ class PrintFragment : Fragment() {
         binding.tvKeterangan.text = keterangan
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        _binding = null
-    }
+//    override fun onDestroyView() {
+//        super.onDestroyView()
+//        _binding = null
+//    }
 }
 
 //val bonusType = arguments?.getSerializable("bonusType") as? BonusType

@@ -5,7 +5,7 @@ enum class BonusType(val minimumPurchase: Int, val description: String) {
     ADDITIONAL_ITEM(50000, "Bonus 1 barang");
 
     companion object {
-        fun getBonusTypeByPurchase(purchaseAmount: Int): BonusType {
+        fun getBonusTypeByPurchase(purchaseAmount: Float): BonusType {
             return if (purchaseAmount >= ADDITIONAL_ITEM.minimumPurchase) {
                 ADDITIONAL_ITEM
             } else {
