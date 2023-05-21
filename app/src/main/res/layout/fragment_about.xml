@@ -5,4 +5,8 @@
     android:layout_margin="16dp"
     android:autoLink="web"
     android:text="@string/copyright"
-    android:textSize="18sp" />
+    android:textSize="18sp"
+
+
+    />
+

@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">MiniKasir App</string>
     <string name="nama_invalid">Nama tidak boleh kosong</string>
-    <string name="copyright">MiniKasir Merupakan Aplikasi yang di buat untuk memenuhi asessmen 2 pada matakuliah Mobile Programming\n</string>
+    <string name="copyright">MiniKasir Merupakan Aplikasi yang di buat untuk memenuhi asessmen 2 pada matakuliah Mobile Programming,Aplikasi ini berfungsi untuk mempermudah menghitung hasil belanja Temukan kodenya di https://github.com/firmanzip/Minikasir-Application.git\n\nCopyright © 2023 Firmansyah Septian.\nAll rights reserved.</string>
     <string name="belum_ada_data">Belum Ada Data</string>
     <string name="histori">Riwayat</string>
     <string name="result_x">Total Belanja anda adalah : Rp.%1$.0f,00</string>

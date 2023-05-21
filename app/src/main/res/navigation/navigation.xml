@@ -33,6 +33,6 @@
     <fragment
         android:id="@+id/historiFragment"
         android:name="org.d3if3118.minikasir.ui.histori.HistoriFragment"
-        android:label="HistoriFragment"
+        android:label="Daftar Riwayat"
         tools:layout="@layout/fragment_histori"/>
 </navigation>
