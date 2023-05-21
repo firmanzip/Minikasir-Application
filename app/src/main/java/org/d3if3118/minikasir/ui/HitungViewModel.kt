@@ -1,17 +1,15 @@
-package org.d3if3118.minikasir
+package org.d3if3118.minikasir.ui
 
 import android.content.Context
 import android.text.TextUtils
 import android.view.inputmethod.InputMethodManager
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.ViewModel
-import org.d3if3118.minikasir.R
 import org.d3if3118.minikasir.model.BonusType
 import org.d3if3118.minikasir.model.Purchase
 import org.d3if3118.minikasir.model.PurchaseResult
 
-class MainViewModel : ViewModel() {
+class HitungViewModel : ViewModel() {
     var isDarkMode: Boolean = false
 
     fun setDarkMode() {

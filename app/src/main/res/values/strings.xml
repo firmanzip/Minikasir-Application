@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">MiniKasir App</string>
     <string name="nama_invalid">Nama tidak boleh kosong</string>
+    <string name="copyright">MiniKasir Merupakan Aplikasi yang di buat untuk memenuhi asessmen 2 pada matakuliah Mobile Programming\n</string>
 </resources>

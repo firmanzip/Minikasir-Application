@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/hitungFragment">
+
+    <fragment
+        android:id="@+id/hitungFragment"
+        android:name="org.d3if3118.minikasir.ui.HitungFragment"
+        android:label="MiniKasir App"
+        tools:layout="@layout/fragment_hitung" >
+        <action
+            android:id="@+id/action_hitungFragment_to_printFragment"
+            app:destination="@id/printFragment" />
+        <action
+            android:id="@+id/action_hitungFragment_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/printFragment"
+        android:name="org.d3if3118.minikasir.ui.PrintFragment"
+        android:label="Hasil"
+        tools:layout="@layout/fragment_print"/>
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="org.d3if3118.minikasir.ui.AboutFragment"
+        android:label="Tentang Aplikasi"
+        tools:layout="@layout/fragment_about"/>
+</navigation>
