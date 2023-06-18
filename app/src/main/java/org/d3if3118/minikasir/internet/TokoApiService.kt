@@ -27,4 +27,5 @@ object TokoApi {
     fun getTokoUrl(imageId: String): String {
         return "$BASE_URL$imageId"
     }
+    enum class ApiStatus { LOADING, SUCCESS, FAILED }
 }

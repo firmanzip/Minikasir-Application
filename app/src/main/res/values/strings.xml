@@ -16,4 +16,5 @@
     <string name="diskon">Diskon</string>
     <string name="message">%1$s diklik!</string>
     <string name="switch_layout">ubah tampilan</string>
+    <string name="koneksi_error">Koneksi Error</string>
 </resources>

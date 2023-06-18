@@ -21,8 +21,7 @@ import org.d3if3118.minikasir.R
 import org.d3if3118.minikasir.data.SettingDataStore
 import org.d3if3118.minikasir.data.dataStore
 import org.d3if3118.minikasir.databinding.FragmentTokoBinding
-
-
+import org.d3if3118.minikasir.internet.TokoApi
 
 
 class TokoFragment : Fragment() {
@@ -65,7 +64,24 @@ class TokoFragment : Fragment() {
         viewModel.getData().observe(viewLifecycleOwner) {
             myAdapter.updateData(it)
         }
+        viewModel.getStatus().observe(viewLifecycleOwner) {
+            updateProgress(it)
+        }
 
+    }
+    private fun updateProgress(status: TokoApi.ApiStatus) {
+        when (status) {
+            TokoApi.ApiStatus.LOADING -> {
+                binding.progressBar.visibility = View.VISIBLE
+            }
+            TokoApi.ApiStatus.SUCCESS -> {
+                binding.progressBar.visibility = View.GONE
+            }
+            TokoApi.ApiStatus.FAILED -> {
+                binding.progressBar.visibility = View.GONE
+                binding.networkError.visibility = View.VISIBLE
+            }
+        }
     }
     private fun setLayout() {
         binding.recyclerView.layoutManager = if (isLinearLayout)
