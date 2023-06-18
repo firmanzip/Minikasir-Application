@@ -42,5 +42,5 @@
     <fragment
         android:id="@+id/tokoFragment"
         android:name="org.d3if3118.minikasir.store.TokoFragment"
-        android:label="TokoFragment" />
+        android:label="Toko" />
 </navigation>

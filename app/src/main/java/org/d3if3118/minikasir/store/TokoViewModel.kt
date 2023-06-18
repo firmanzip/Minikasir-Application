@@ -1,14 +1,20 @@
 package org.d3if3118.minikasir.store
 
+import android.app.Application
 import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import androidx.work.ExistingWorkPolicy
+import androidx.work.OneTimeWorkRequestBuilder
+import androidx.work.WorkManager
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.d3if3118.minikasir.internet.TokoApi
+import org.d3if3118.minikasir.internet.UpdateWorker
 import org.d3if3118.minikasir.model.Toko
+import java.util.concurrent.TimeUnit
 
 
 class TokoViewModel : ViewModel() {
@@ -33,4 +39,14 @@ class TokoViewModel : ViewModel() {
 
     fun getData(): LiveData<List<Toko>> = data
     fun getStatus(): LiveData<TokoApi.ApiStatus> = status
+    fun scheduleUpdater(app: Application) {
+        val request = OneTimeWorkRequestBuilder<UpdateWorker>()
+            .setInitialDelay(1, TimeUnit.MINUTES)
+            .build()
+        WorkManager.getInstance(app).enqueueUniqueWork(
+            UpdateWorker.WORK_NAME,
+            ExistingWorkPolicy.REPLACE,
+            request
+        )
+    }
 }
