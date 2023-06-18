@@ -5,12 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-//import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import org.d3if3118.minikasir.R
 import org.d3if3118.minikasir.databinding.ItemHistoriBinding
 import org.d3if3118.minikasir.db.MiniKasir
-import org.d3if3118.minikasir.model.PurchaseResult
 import org.d3if3118.minikasir.model.hitungTotal
 import java.text.SimpleDateFormat
 import java.util.Date

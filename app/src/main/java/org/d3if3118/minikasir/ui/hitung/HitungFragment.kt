@@ -12,6 +12,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import org.d3if3118.minikasir.R
 import org.d3if3118.minikasir.databinding.FragmentHitungBinding
@@ -65,6 +66,10 @@ class HitungFragment : Fragment() {
         }
         binding.btnReset.setOnClickListener { resetInput() }
 
+        binding.btnList.setOnClickListener{it.findNavController().navigate(
+            R.id.action_hitungFragment_to_tokoFragment
+        )
+    }
         viewModel.getHasil().observe(requireActivity(), { showResult(it) })
         binding.btnShare.setOnClickListener {shareData()}
         }

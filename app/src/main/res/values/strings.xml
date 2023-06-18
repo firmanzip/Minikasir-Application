@@ -13,4 +13,7 @@
     <string name="data_x">Nama Barang: %1$s - Harga: %2$.0f \nJumlah Beli: %3$.0f \nUang Bayar: %4$.0f</string>
     <string name="bagikan_template"> Nama Pelanggan : %1$s \nNama Barang : %2$s
      \nJumlah beli : %3$s \nHarga : %4$s \nUang bayar : %5$s \n%6$s</string>
+    <string name="diskon">Diskon</string>
+    <string name="message">%1$s diklik!</string>
+    <string name="switch_layout">ubah tampilan</string>
 </resources>

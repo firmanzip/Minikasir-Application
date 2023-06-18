@@ -10,7 +10,6 @@ import androidx.datastore.preferences.preferencesDataStore
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
-
 private const val PREFERENCES_NAME = "preferences"
 val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
     name = PREFERENCES_NAME
@@ -20,8 +19,8 @@ class SettingDataStore(prefDataStore: DataStore<Preferences>) {
     val preferenceFlow: Flow<Boolean> = prefDataStore.data
         .catch { emit(emptyPreferences()) }
         .map { it[IS_LINEAR_LAYOUT] ?: true }
-
     suspend fun saveLayout(isLinearLayout: Boolean, context: Context) {
         context.dataStore.edit { it[IS_LINEAR_LAYOUT] = isLinearLayout }
     }
+
 }

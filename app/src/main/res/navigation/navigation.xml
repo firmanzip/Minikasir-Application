@@ -19,6 +19,10 @@
         <action
             android:id="@+id/action_hitungFragment_to_historiFragment"
             app:destination="@id/historiFragment" />
+        <action
+            android:id="@+id/action_hitungFragment_to_tokoFragment"
+            app:destination="@id/tokoFragment" />
+
     </fragment>
     <fragment
         android:id="@+id/printFragment"
@@ -35,4 +39,8 @@
         android:name="org.d3if3118.minikasir.ui.histori.HistoriFragment"
         android:label="Daftar Riwayat"
         tools:layout="@layout/fragment_histori"/>
+    <fragment
+        android:id="@+id/tokoFragment"
+        android:name="org.d3if3118.minikasir.store.TokoFragment"
+        android:label="TokoFragment" />
 </navigation>
